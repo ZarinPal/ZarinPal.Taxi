@@ -1,0 +1,64 @@
+block project-info
+
+- function cacheBusted(url){ return url + '?' + Date.now(); }
+- var version = 3
+- var name    = true
+
+-if(typeof(lang) == "undefined")
+	-lang = "fa";
+doctype html
+html(lang=(lang == "fa" ? 'fa-IR' : 'en') dir=(lang == "fa" ? 'rtl' : 'ltr') class=(error == true ? 'page-black' : ''))
+	head
+		meta(charset='utf-8')
+
+		block title
+			-if(lang == "fa")
+				title
+					=pagename
+					|  | زرین‌پال، کیف‌پول الکترونیک
+			-else if(lang == "en")
+				title
+					=pagename
+					|  | ZarinPal, Iran's Payment Gateway
+		//- meta(name="author" content= "ZarinPal.Com")
+		link(rel="publisher" href="https://plus.google.com/+Zarinpal")
+		meta(name="keywords" content="کیف پول,درگاه مستقیم,پرداخت موبایلی,درگاه پرداخت درون برنامه ای,درگاه پرداخت بانکی,درگاه موبایلی,کیف پول آنلاین,ussd اختصاصی,زرین‌پال,درگاه واسط,درگاه پرداخت")
+		meta(name="enamad" content="275273718")
+		meta(name='description' content="زرین‌پال ارائه دهنده درگاه پرداخت,کیف‌پول,کیف پول آنلاین,درگاه ussd,پرداخت درون برنامه ای,درگاه مستقیم,پرداخت موبایلی,درگاه اختصاصی,درگاه واسط,درگاه پرداخت بانکی می باشد.")
+
+		meta(property='og:locale' content='fa_IR')
+		meta(property='og:type' content='website')
+		meta(property='og:url' content='https://www.zarinpal.com')
+		meta(property='og:title' content='درگاه  پرداخت اینترنتی آسان پرداخت زرین‌پال')
+		meta(property='og:description' content="زرین‌پال ارائه دهنده درگاه پرداخت,کیف‌پول,کیف پول آنلاین,درگاه ussd,پرداخت درون برنامه ای,درگاه مستقیم,پرداخت موبایلی,درگاه اختصاصی,درگاه واسط,درگاه پرداخت بانکی می باشد.")
+		meta(property='og:image' content='https://cdn.zarinpal.com/theme/payment_gateway/img/favicon.png')
+
+		meta(name="robots" content="index follow")
+		meta(http-equiv='X-UA-Compatible' content='IE=edge')
+		meta(name="viewport" content="initial-scale=1.0 user-scalable=no width=device-width")
+
+		meta(name="p:domain_verify" content="7da078fa4ad7ec22b3ab89aba0fd482d")
+
+		meta(name="apple-mobile-web-app-status-bar-style" content="black-translucent")
+		meta(name="apple-mobile-web-app-capable" content="yes")
+
+		link(rel="apple-touch-icon", sizes="180x180", href="/apple-touch-icon.png")
+		link(rel="icon", type="image/png", href="/favicon-32x32.png", sizes="32x32")
+		link(rel="icon", type="image/png", href="/favicon-16x16.png", sizes="16x16")
+		link(rel="manifest", href="/manifest.json")
+		link(rel="mask-icon", href="/safari-pinned-tab.svg")
+		meta(name="theme-color", content="#ffffff")
+
+		link(href=cacheBusted('/assets/css/styles.css') rel="stylesheet" media="all")
+		//- -if(lang == "en")
+			link(href=cacheBusted('/assets/css/en.css') rel="stylesheet" media="all")
+
+		block header
+
+	body(class=(HelloWithEffect == true ? 'hello-effects' : ''))
+		block content
+
+		if(branch != true)
+			include scripts
+
+		block footer

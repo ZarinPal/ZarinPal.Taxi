@@ -1,0 +1,232 @@
+//colors
+$color_black_approx: #050505;
+$color_storm_dust_approx: #666;
+$black_70: rgba(0, 0, 0, 0.7);
+$black_10: rgba(0, 0, 0, 0.1);
+$white_20: rgba(255, 255, 255, 0.2);
+$color_tuatara_approx: #393939;
+$color_bunker_approx: #151515;
+$color_persian_blue_approx: #333;
+$color_woodsmoke_approx: #111;
+$black_30: rgba(0, 0, 0, 0.3);
+$black: #000;
+$color_mine_shaft_approx: #333;
+$black_20: rgba(0, 0, 0, 0.2);
+$white: #fff;
+$color_gallery_approx: #eee;
+
+//@extend-elements
+//original selectors
+//#iphone6 .top-group:before, #iphone6 .top-group:after
+%extend_1 {
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 100px;
+	content: " ";
+	position: absolute;
+}
+
+//original selectors
+//#iphone6 .left-group, #iphone6 .left-group:before, #iphone6 .left-group:after
+%extend_2 {
+	position: absolute;
+	left: -5px;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 2px 0 0 2px;
+	width: 2px;
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: 1px 0 0 $white_20 inset;
+}
+
+//original selectors
+//#iphone6 .left-group:before, #iphone6 .left-group:after
+%extend_3 {
+	content: " ";
+	height: 35px;
+	left: 0;
+}
+
+//original selectors
+//#iphone6 .top-accents:before, #iphone6 .top-accents:after, #iphone6 .bottom-accents:before, #iphone6 .bottom-accents:after
+%extend_4 {
+	height: 11px;
+	width: 4px;
+	background: $black_20;
+	position: absolute;
+	content: " ";
+}
+
+
+#iphone6s {
+	height: 600px;
+	width: 295px;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 42px;
+	position: relative;
+	margin: 0 auto;
+	&.black {
+		background-color: $color_black_approx;
+		border: 3px solid $color_storm_dust_approx;
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		// box-shadow: 0 0 0 2px $black_70 inset, -30px 0 0 $black_10, 0 0 0 3px $white_20 inset;
+		.top-group {
+			background-color: $color_tuatara_approx;
+			border: 1px solid $color_bunker_approx;
+			&:before {
+				background-color: $color_tuatara_approx;
+				border: 1px solid $color_bunker_approx;
+			}
+			&:after {
+				background-color: $color_persian_blue_approx;
+				border: 1px solid $color_woodsmoke_approx;
+				//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+				box-shadow: 0 0 0 2px $black_30 inset;
+			}
+		}
+		.left-group {
+			background-color: $color_storm_dust_approx;
+			&:before {
+				background-color: $color_storm_dust_approx;
+			}
+			&:after {
+				background-color: $color_storm_dust_approx;
+			}
+		}
+		.right-group {
+			background-color: $color_storm_dust_approx;
+			//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+			box-shadow: -1px 0 0 $white_20 inset;
+		}
+		.screen {
+			iframe{
+				margin: 0;
+			}
+			.screen-wrap {
+				border-color: $black !important;
+			}
+			&:before {
+				background-color: $color_black_approx;
+			}
+			&:after {
+				background: $color_woodsmoke_approx;
+				background: linear-gradient(135deg, $black 0, $color_mine_shaft_approx 35%, $color_mine_shaft_approx 65%, $black 100%);
+			}
+		}
+	}
+	.top-group {
+		width: 42px;
+		height: 5px;
+		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+		border-radius: 100px;
+		position: absolute;
+		top: 30px;
+		left: 50%;
+		margin-left: -21px;
+		&:before {
+			@extend %extend_1;
+			height: 6px;
+			width: 6px;
+			top: -19px;
+			left: 50%;
+			margin-left: -4px;
+		}
+		&:after {
+			@extend %extend_1;
+			height: 8px;
+			width: 8px;
+			left: -22px;
+			top: -4px;
+		}
+	}
+	.left-group {
+		@extend %extend_2;
+		top: 65px;
+		height: 21px;
+		&:before {
+			@extend %extend_2;
+			@extend %extend_3;
+			top: 45px;
+		}
+		&:after {
+			@extend %extend_2;
+			@extend %extend_3;
+			top: 93px;
+		}
+	}
+	.right-group {
+		top: 109px;
+		height: 35px;
+		position: absolute;
+		right: -5px;
+		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+		border-radius: 0 2px 2px 0;
+		width: 2px;
+	}
+	.top-accents {
+		&:before {
+			@extend %extend_4;
+			left: -3px;
+			top: 35px;
+		}
+		&:after {
+			@extend %extend_4;
+			right: -3px;
+			top: 35px;
+		}
+	}
+	.bottom-accents {
+		&:before {
+			@extend %extend_4;
+			left: -3px;
+			bottom: 35px;
+		}
+		&:after {
+			@extend %extend_4;
+			right: -3px;
+			bottom: 35px;
+		}
+	}
+	.screen {
+		height: 475px;
+		width: 269px;
+		background-color: $white;
+		margin: 60px auto 0;
+		position: relative;
+		z-index: 0;
+		.screen-wrap {
+			height: 100%;
+			width: 100%;
+			position: relative;
+			border: 1px solid $color_gallery_approx;
+		}
+		img {
+			display: block;
+			margin: 0 auto;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		&:before {
+			height: 38px;
+			width: 38px;
+			//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+			border-radius: 100px;
+			content: " ";
+			position: absolute;
+			bottom: -47px;
+			left: 50%;
+			margin-left: -19px;
+			z-index: 3;
+		}
+		&:after {
+			height: 42px;
+			width: 42px;
+			//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+			border-radius: 100px;
+			content: " ";
+			position: absolute;
+			bottom: -49px;
+			left: 50%;
+			margin-left: -21px;
+		}
+	}
+}

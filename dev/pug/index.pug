@@ -1,0 +1,208 @@
+extends partials/layout
+
+block project-info
+	- var pagename = 'تاکسی'
+	- var taxi = true
+	- var index_fa = true
+	- var HelloWithEffect = false
+
+block content
+	<!-- .Taxi -->
+	include partials/header
+
+	section.section__intro#airport-taxi.animate
+		.wrap
+			section.section__intro--cover
+				img(src="./assets/img/pics/intro-airport.jpg", alt="تاکسی فرودگاه | زرین‌تاکسی")
+			.row
+				section.column__mobile-16.column__tablet-7
+					.section__intro--box
+						h5.heading.m تاکسی فرودگاه
+						h3.heading.l
+							| پرداخت لوکس،
+							br
+							| مثل تاکسی های فرودگاه
+
+			section.section__intro--content
+				p.paragraph.lead.text با وجود مسافرهای خارجی و توریست‌ها، همچنین همراه نداشتن پول نقد کافی و ریالی، پرداخت آنلاین با موبایل و تبدیل پول توریست‌ها به پول ریالی می‌تونه بهترین اتفاق ممکن باشه برای تاکسی‌های فرودگاه.
+				section.column__mobile-16.column__tablet-7.column-inline.vertical-align_middle
+					figure(class="bullet animate")
+						span(class="oval")
+							i(class="svgBanner square art-1 oval-icon")
+						figcaption(class="info")
+							div(class="heading") پرداخت به دلار، دریافت به ریال
+							p(class="body lead") قطعا مسافرهای خارجی پول نقد ریالی زیادی همراه ندارن و از پرداخت کرایه تاکسی به صورت آنلاین و به پول رایج خودشون استقبال می‌کنن.
+
+				section.column__mobile-16.column__tablet-7.column-inline.vertical-align_middle
+					figure(class="bullet animate")
+						span(class="oval")
+							i(class="svgBanner square art-8 oval-icon")
+
+						figcaption(class="info")
+							div(class="heading") پول نقد لاموجود
+							p(class="body lead") قطعا همراه داشتن مقدار زیادی پول نقد توسط مسافر دور از انتظاره، ولی این مقدار پول تو کارت‌شون و امکان پرداخت با کارت بانکی به صورت آنلاین، کاملا ممکن و جذابه.
+
+				section.column__mobile-16.column__tablet-7.column-inline.vertical-align_middle
+					figure(class="bullet animate")
+						span(class="oval")
+							i(class="svgBanner square art-4 oval-icon")
+
+						figcaption(class="info")
+							div(class="heading") پرداخت مدرن و لوکس
+							p(class="body lead") سوار شدن تو ماشین‌های روز جهان و مدرن، با پرداخت کرایه تاکسی به صورت نقدی و سنتی اصلا همخونی نداره. پرداخت کرایه تو این ماشین‌ها هم باید مدرن و لوکس باشه.
+
+				section.column__mobile-16.column__tablet-7.column-inline.vertical-align_middle
+					figure(class="bullet animate")
+						span(class="oval")
+							i(class="svgBanner square art-2 oval-icon")
+
+						figcaption(class="info")
+							div(class="heading") حمل گاوصندوق
+							p(class="body lead") با توجه به نرخ بالای کرایه‌ی تاکسی‌های فرودگاه، پرداخت و دریافت این مقدار پول نقد و نگه‌داری از آن، می‌تونه دردسرساز باشه. پرداخت و دریافت آنلاین کرایه مثل گاوصندوق عمل می کنه.
+
+
+	section.section__intro#urban-taxi.animate
+		.wrap
+			section.section__intro--cover
+				img(src="./assets/img/pics/intro-urban.jpg", alt="تاکسی شهری | زرین‌تاکسی")
+			.row
+				section.column__mobile-16.column__tablet-7
+					.section__intro--box
+						h5.heading.m تاکسی شهری
+						h3.heading.l
+							| خداحافظی با این سوال که:
+							br
+							| «پول خُرد نداری؟»
+
+			section.section__intro--content
+				p.paragraph.lead.text با وجود معضلات زیادی مثل نداشتن پول خُرد، نگه‌داری از پول نقد تو ماشین و خیلی مشکلات بزرگ و کوچک دیگه، پرداخت کرایه تاکسی با موبایل می‌تونه بهترین اتفاق ممکن باشه برای تاکسی‌های شهری.
+				section.column__mobile-16.column__tablet-7.column-inline.vertical-align_middle
+					figure(class="bullet animate")
+						span(class="oval")
+							i(class="svgBanner square art-5 oval-icon")
+						figcaption(class="info")
+							div(class="heading") خرد کردن پول
+							p(class="body lead") پول خرد بده، پول خرد ندارم. دیگه وقتشه با این مکالمه و دردسرهای پول نقد و خرد، هنگام پرداخت کرایه تاکسی خداحافظی کرد. همچنین این سوال که، پول خرد نداری؟
+
+				section.column__mobile-16.column__tablet-7.column-inline.vertical-align_middle
+					figure(class="bullet animate")
+						span(class="oval")
+							i(class="svgBanner square art-7 oval-icon")
+
+						figcaption(class="info")
+							div(class="heading") نگه‌داری از پول نقد
+							p(class="body lead") به جای نگه داشتن پول نقد تو داشبورد و جاهای مخفی ماشین، بهتره پول‌مون رو تو حساب‌مون نگه داریم و پول کرایه تاکسی مستقیم بره به کیف پول آنلاین یا حساب بانکی‌مون.
+
+				section.column__mobile-16.column__tablet-7.column-inline.vertical-align_middle
+					figure(class="bullet animate")
+						span(class="oval")
+							i(class="svgBanner square art-3 oval-icon")
+
+						figcaption(class="info")
+							div(class="heading") لبخند هنگام پرداخت
+							p(class="body lead") خیلی وقت‌ها بوده سر پرداخت کرایه تاکسی اعصاب‌خوردی به وجود اومده، بهتره به جای خراب شدن روزمون اول صبح هنگام پرداخت کرایه تاکسی، با لبخند این کارو انجام بدیم.
+
+				section.column__mobile-16.column__tablet-7.column-inline.vertical-align_middle
+					figure(class="bullet animate")
+						span(class="oval")
+							i(class="svgBanner square art-6 oval-icon")
+
+						figcaption(class="info")
+							div(class="heading") مدیریت درآمد روزانه
+							p(class="body lead") به طور جد حساب و کتاب درآمد خرد به صورت روزانه و ماهانه کار پیچیده و سختیه، پس اگه بشه درآمد روزانه تاکسی‌مون رو رایگان و راحت مدیریت کنیم، یعنی ۶-۰ از بقیه جلوییم.
+
+	section.section__app.section__column#app
+		.wrap
+			.flex-row
+				section.column__mobile-16.column__tablet-8.flex-container.animate
+					.section__column--gutter
+						h5.heading.m دانلود اپلیکیشن
+						h3.heading.l
+							| کرایه پرداخت شد،
+							br
+							| در لحظه این پیغام رو ببینید
+
+						.paragraph.m
+							p حدود ۹۵٪ پرداخت‌های تاکسی‌ها با پول نقد انجام میشه، پس بد نیست برای حس تجربه‌های جدیدتر و راحت‌تر در مسیر جدیدی قدم برداریم و برای راحتی راننده تاکسی و مسافر، از پرداخت آنلاین کرایه تاکسی استفاده بشه.
+							p هر راننده تاکسی یه لینک پرداخت یا QR کد داره که مسافر با نصب اپلیکیشن زرین‌پال و اسکن QR کد یا باز کردن اون لینک تو موبایلش و وارد کردن مبلغ کرایه، می‌تونه کرایه‌اش رو خیلی راحت پرداخت کنه و راننده تاکسی همون لحظه از اپلیکیشن زرین‌پال پیغامی دریافت می‌کنه که کرایه پرداخت شد.
+					.section__column--banner
+						h3.paragraph دانلود اپلیکیشن اندروید زرین‌پال:
+						.flex-row
+							a(target="_blank" href="https://cafebazaar.ir/app/com.zarinpal.ewallets/?l=fa")
+								img(src="./assets/img/cafebazaar.svg")
+							a(target="_blank" href="https://play.google.com/store/apps/details?id=com.zarinpal.ewallets")
+								img(src="./assets/img/google-play.svg")
+
+				section.column__mobile-16.column__tablet-8.flex-container.animate
+					.showcases
+						.slide(data-color='yellow')
+							figure.section__app--showcase
+								img.mockup(src="./assets/img/screenshots/Screenshot-1.png")
+								figcaption.paragraph.lead.caption
+									b اسکن QRCode.
+									|  می‌تونه توسط اپلیکیشن زرین‌پال انجام بشه یا هر نرم‌افزار QR Reader دیگه تا شما به صفحه پرداخت کرایه هدایت بشین.
+						.slide(data-color='green')
+							figure.section__app--showcase
+								img.mockup(src="./assets/img/screenshots/Screenshot-2.png")
+								figcaption.paragraph.lead.caption
+									b پرداخت کرایه.
+									|  با تعیین مبلغ می‌تونه از کیف‌پول شما در زرین‌پال یا هر کارت بانکی دیگه انجام بشه. همچنین از طریق چندین روش پرداخت دیگه.
+						.slide(data-color='purple')
+							figure.section__app--showcase
+								img.mockup(src="./assets/img/screenshots/Screenshot-3.png")
+								figcaption.paragraph.lead.caption
+									b دریافت کرایه.
+									|  با نمایان شدن یه ناتیفیکیشن توسط اپلیکیشن زرین‌پال تو موبایل راننده تاکسی، همون لحظه میگه که کی کرایه‌اش رو پرداخت کرده.
+
+
+	//- section.section__signup.animate
+	//- 	form.form(action="https://api.zarinpal.com/rest/v3/oauth/registerUser.json" method="POST")
+	//- 		.signup-form
+	//- 			h3.heading.l ثبت نام در زرین پال
+	//- 			.form-field مشخصات فردی
+	//- 			label.label
+	//- 				.input
+	//- 					i.icon
+	//- 					input#first-name(type="text" name="first_name" placeholder="نام")
+	//- 			label.label
+	//- 				.input
+	//- 					i.icon
+	//- 					input#last-name(type="text" name="last_name" placeholder="نام خوانوادگی")
+	//- 			label.label
+	//- 				.input
+	//- 					i.icon
+	//- 					input#number(type="text" name="mobile" placeholder="شماره موبایل")
+	//- 			button.btn.btn-golden.small.submit#submit ارسال
+	//- 			.message
+
+	section.section__signup.section__column#signup
+		.wrap
+			.flex-row
+				section.column__mobile-16.column__tablet-8.flex-container.animate
+					.section__column--banner
+						h3.paragraph فرم ثبت‌نام راننده
+						form.form.signup-form(action="https://api.zarinpal.com/rest/v3/oauth/registerUser.json" method="POST" autocomplete="off")
+							label.label.full-width
+								input.input.userinfo.half-width#first-name(type="text" name="first_name" placeholder="نام...")
+								input.input.userinfo.half-width.pull-left#last-name(type="text" name="last_name" placeholder="نام‌خانوادگی...")
+							label.label.full-width
+								input.input.mobilenumber#number(type="text" name="mobile" placeholder="شماره تلفن همراه، مثال؛ ۰۹۱۲۱۲۳۴۵۶")
+							button.btn.btn-blue.small.submit
+								i.icon
+								| ارسال
+							.message
+				section.column__mobile-16.column__tablet-8.flex-container.animate
+					.section__column--gutter
+						h5.heading.m ثبت نام
+						h3.heading.l
+							| سریع و راحت،
+							br
+							| مثل پرداخت آنلاین کرایه تاکسی
+
+						.paragraph.lead
+							p در حال حاضر تعداد
+								span.bold ۲۰۰۰+
+								| تاکسی در تهران در حال استفاده از سرویس پرداخت آنلاین کرایه تاکسی هستند تا هم مسافران و هم رانندگان احساس جدیدی را تجربه کنن، پس چرا من همین الان از این سرویس برای تاکسی خودم استفاده نکنم؟
+							//- p در حال حاضر تعداد ۲۰۰۰+ تاکسی در تهران در حال استفاده از سرویس پرداخت آنلاین کرایه تاکسی هستند، پس چرا من همین الان از این سرویس برای تاکسی خودم استفاده نکنم؟
+	.introbox
+	include partials/footer

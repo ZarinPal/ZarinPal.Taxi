@@ -1,0 +1,6 @@
+- function cacheBusted(url){ return url + '?' + Date.now(); }
+script(type="text/javascript" data-main="/assets/js/init" src=cacheBusted('/assets/js/lib/require.js'))
+script(type="text/javascript").
+	require(['init'], function(){
+		require(['app']);
+	});
