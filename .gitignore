@@ -62,3 +62,7 @@ typings/
 .deploy_key.pub
 
 .deploy_key
+
+assets/
+
+index.html

@@ -71,7 +71,7 @@ gulp.task('styles', () => {
 		.pipe(gulp.dest(`${dirs.dest}/css/`))
 });
 
-gulp.task('babel', () => {
+gulp.task('babel', ['copyLibs'], () => {
 	return gulp.src([`${dirs.src}/js/**/*.+(js|es6)`, `!${dirs.src}/js/lib/*.js`])
 		.pipe(sourcemaps.init({ loadMaps: true }))
 		.pipe(babel({
@@ -83,6 +83,14 @@ gulp.task('babel', () => {
 		.pipe(gulp.dest(`${dirs.dest}/js/`));
 });
 
+
+gulp.task('copyLibs', () => {
+	return gulp.src([`${dirs.src}/js/lib/*.js`])
+		.pipe(gulp.dest(`${dirs.dest}/js/lib/`));
+});
+
+
+
 gulp.task('images', ['svgs'], () => {
 	return gulp.src(`${dirs.src}/img/**/*.+(jpg|png|jpeg)`)
 		.pipe(imagemin())
@@ -90,11 +98,16 @@ gulp.task('images', ['svgs'], () => {
 });
 
 gulp.task('svgs', () => {
-	return gulp.src([`${dirs.src}/img/**/*.svg`, `!${dirs.src}/img/icons/*.svg`])
+	return gulp.src([`${dirs.src}/img/**/*.svg`])
 		.pipe(svg({
 			removeTitle: true,
 		}))
-		.pipe(gulp.dest(`${dirs.dest}/img`));
+		.pipe(gulp.dest(`${dirs.dest}/img/`));
+});
+
+gulp.task('fonts', () => {
+	return gulp.src([`${dirs.src}/fonts/**/*`])
+		.pipe(gulp.dest(`${dirs.dest}/fonts/`));
 });
 
 // gulp.task('icons', ['minify-css_fonts'], () => {
@@ -144,5 +157,5 @@ gulp.task('sync', () => {
 /**
  * Register Tasks:
  */
-gulp.task('default', ['styles', 'babel', 'views', 'images', 'sync', 'watch']);
-gulp.task('production', ['styles', 'babel', 'views', 'images']);
+gulp.task('default', ['styles', 'babel', 'views', 'images', 'sync', 'watch', 'fonts']);
+gulp.task('production', ['styles', 'babel', 'views', 'images', 'fonts']);

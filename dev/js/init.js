@@ -2,7 +2,7 @@ requirejs.config({
 	baseUrl: '/assets/js/',
 	paths: {
 		jquery: 'lib/jquery',
-		slick: 'lib/slick/slick.min',
+		slick: 'lib/slick.min',
 		// rellax: 'lib/rellax',
 		// bowser: 'lib/bowser',
 		TweenMax: 'lib/TweenMax',
