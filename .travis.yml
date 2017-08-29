@@ -1,0 +1,14 @@
+sudo: required
+dist: trusty
+branches:
+  only:
+  - master
+language: node_js
+node_js:
+  - stable
+notifications:
+  email: false
+script:
+    - ./compiler.sh
+before_install:
+    - openssl aes-256-cbc -K $encrypted_82536a8c1458_key -iv $encrypted_82536a8c1458_iv -in .deploy_key.enc -out .deploy_key -d
