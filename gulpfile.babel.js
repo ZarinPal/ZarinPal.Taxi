@@ -145,3 +145,4 @@ gulp.task('sync', () => {
  * Register Tasks:
  */
 gulp.task('default', ['styles', 'babel', 'views', 'images', 'sync', 'watch']);
+gulp.task('production', ['styles', 'babel', 'views', 'images']);
