@@ -150,5 +150,17 @@ define(['jquery', 'slick', 'TweenMax'], ($, slick, TweenMax) => {
 			};
 		});
 
+        $(".modal").click(function (e) {
+            e.preventDefault();
+            $(this).css("display", "none");
+        })
+        $("#video-banner").click(function (e) {
+            e.preventDefault();
+            $("#video-banner-modal").css("display", "block");
+        });
+        $(".modal .close").click(function (e) {
+            e.preventDefault();
+            $(this).parent().css("display", "none");
+        })
 	});
 });
