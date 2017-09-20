@@ -132,7 +132,7 @@ gulp.task('views', () => {
 	.pipe(pug({
 		pretty: true
 	}))
-	.pipe(gulp.dest('${dirs.dest}'));
+	.pipe(gulp.dest(`${dirs.dest}`));
 });
 
 
