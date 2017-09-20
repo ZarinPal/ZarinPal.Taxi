@@ -37,7 +37,7 @@ import browserSync from 'browser-sync';
  */
 const dirs = {
 	src: 'dev',
-	dest: 'assets'
+	dest: 'public'
 };
 const reload = browserSync.reload;
 const processors = [
@@ -68,7 +68,7 @@ gulp.task('styles', () => {
 		.pipe(postcss(processors))
 		// .pipe(importCss())
 		.pipe(sourcemaps.write('./'))
-		.pipe(gulp.dest(`${dirs.dest}/css/`))
+		.pipe(gulp.dest(`${dirs.dest}/assets/css/`))
 });
 
 gulp.task('babel', ['copyLibs'], () => {
@@ -80,13 +80,13 @@ gulp.task('babel', ['copyLibs'], () => {
 		.pipe(uglify())
 		// .pipe(concat('app.js', {newLine: ';'}))
 		.pipe(sourcemaps.write('./'))
-		.pipe(gulp.dest(`${dirs.dest}/js/`));
+		.pipe(gulp.dest(`${dirs.dest}/assets/js/`));
 });
 
 
 gulp.task('copyLibs', () => {
 	return gulp.src([`${dirs.src}/js/lib/*.js`])
-		.pipe(gulp.dest(`${dirs.dest}/js/lib/`));
+		.pipe(gulp.dest(`${dirs.dest}/assets/js/lib/`));
 });
 
 
@@ -94,7 +94,7 @@ gulp.task('copyLibs', () => {
 gulp.task('images', ['svgs'], () => {
 	return gulp.src(`${dirs.src}/img/**/*.+(jpg|png|jpeg)`)
 		.pipe(imagemin())
-		.pipe(gulp.dest(`${dirs.dest}/img`));
+		.pipe(gulp.dest(`${dirs.dest}/assets/img`));
 });
 
 gulp.task('svgs', () => {
@@ -102,12 +102,12 @@ gulp.task('svgs', () => {
 		.pipe(svg({
 			removeTitle: true,
 		}))
-		.pipe(gulp.dest(`${dirs.dest}/img/`));
+		.pipe(gulp.dest(`${dirs.dest}/assets/img/`));
 });
 
 gulp.task('fonts', () => {
 	return gulp.src([`${dirs.src}/fonts/**/*`])
-		.pipe(gulp.dest(`${dirs.dest}/fonts/`));
+		.pipe(gulp.dest(`${dirs.dest}/assets/fonts/`));
 });
 
 // gulp.task('icons', ['minify-css_fonts'], () => {
@@ -115,13 +115,13 @@ gulp.task('fonts', () => {
 // 	.pipe(fontcustom({
 // 		'config' : __dirname + "/icons.yml",
 // 	}))
-// 	.pipe(gulp.dest(`${dirs.dest}/fonts/icons/`));
+// 	.pipe(gulp.dest(`${dirs.dest}/assets/fonts/icons/`));
 // });
 
 // gulp.task('minify-css_fonts', () => {
-// 	return gulp.src(`${dirs.dest}/fonts/icons/*.css`)
+// 	return gulp.src(`${dirs.dest}/assets/fonts/icons/*.css`)
 // 		.pipe(postcss(processors))
-// 		.pipe(gulp.dest(`${dirs.dest}/fonts/icons`));
+// 		.pipe(gulp.dest(`${dirs.dest}/assets/fonts/icons`));
 // });
 
 gulp.task('views', () => {
@@ -132,7 +132,7 @@ gulp.task('views', () => {
 	.pipe(pug({
 		pretty: true
 	}))
-	.pipe(gulp.dest('./'));
+	.pipe(gulp.dest('${dirs.dest}'));
 });
 
 
